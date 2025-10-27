@@ -1,0 +1,6 @@
+@nft_netcore_back_HostAddress = http://localhost:5216
+
+GET {{nft_netcore_back_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

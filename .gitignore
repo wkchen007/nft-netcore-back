@@ -1,0 +1,35 @@
+﻿# Build
+bin/
+obj/
+out/
+publish/
+
+# User files
+*.user
+*.suo
+*.vspscc
+.vs/
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+**/packages/*
+*.nuget/
+
+# Secrets
+**/secrets.json
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test results
+TestResults/
