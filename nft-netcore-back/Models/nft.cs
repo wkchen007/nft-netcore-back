@@ -16,4 +16,6 @@ public partial class nft
     public string image { get; set; } = null!;
 
     public int demo { get; set; }
+
+    public int? userId { get; set; }
 }

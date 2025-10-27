@@ -27,6 +27,30 @@ namespace nft_netcore_back.Controllers
             return Ok(list);
         }
 
+        // GET: <NftController>/demo
+        [HttpGet("demo")]
+        public async Task<ActionResult<List<nft>>> demo()
+        {
+            var result = await _nftwebContext.nft
+                .Where(n => n.demo == 1)
+                .Join(
+                    _nftwebContext.users,
+                    n => n.userId,
+                    u => u.id,
+                    (n, u) => new
+                    {
+                        id = n.id,
+                        name = n.name,
+                        description = n.description,
+                        meta = n.meta,
+                        image = n.image,
+                        userFirstName = u.first_name
+                    }
+                ).ToListAsync();
+
+            return Ok(result);
+        }
+
         // GET <NftController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<nft>> Get(int id)
