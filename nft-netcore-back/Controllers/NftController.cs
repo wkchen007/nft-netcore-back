@@ -46,7 +46,13 @@ namespace nft_netcore_back.Controllers
                         image = n.image,
                         userFirstName = u.first_name
                     }
-                ).ToListAsync();
+                )
+                .OrderBy(n => n.id).ToListAsync();
+
+            if (result == null || result.Count == 0)
+            {
+                return NotFound("查無結果");
+            }
 
             return Ok(result);
         }
